@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台灣高鐵購票與省錢攻略 - LLM Wiki 教學簡報</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: "Microsoft JhengHei", sans-serif; }
+        body { background: #18181b; color: #f4f4f5; height: 100vh; display: flex; flex-direction: column; }
+        .top-bar { height: 6px; background: #f97316; width: 0%; transition: 0.3s; }
+        .main { flex: 1; display: flex; align-items: center; justify-content: center; padding: 20px; }
+        .card { display: none; background: #27272a; max-width: 860px; width: 100%; padding: 40px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.5); border: 1px solid #3f3f46; }
+        .card.active { display: block; animation: fade 0.3s ease; }
+        @keyframes fade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+        .badge { background: #ea580c; color: #fff; padding: 4px 12px; border-radius: 12px; font-size: 14px; display: inline-block; margin-bottom: 12px; }
+        h1 { font-size: 30px; margin-bottom: 16px; color: #fdba74; }
+        h2 { font-size: 26px; margin-bottom: 18px; color: #fdba74; }
+        p { font-size: 18px; line-height: 1.6; color: #e4e4e7; margin-bottom: 14px; }
+        ul { margin-left: 22px; margin-top: 10px; }
+        li { font-size: 18px; line-height: 1.7; margin-bottom: 10px; color: #f4f4f5; }
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; background: #18181b; border-radius: 8px; overflow: hidden; }
+        th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #3f3f46; font-size: 16px; }
+        th { background: #c2410c; color: white; }
+        .source { margin-top: 25px; padding-top: 12px; border-top: 1px dashed #52525b; font-size: 14px; color: #a1a1aa; }
+        .nav { background: #09090b; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; }
+        button { background: #ea580c; color: white; border: none; padding: 10px 20px; border-radius: 8px; font-size: 16px; cursor: pointer; }
+        button:disabled { background: #3f3f46; cursor: not-allowed; }
+    </style>
+</head>
+<body>
+    <div class="top-bar" id="bar"></div>
+    <div class="main">
+        <!-- 第 1 頁 -->
+        <div class="card active">
+            <span class="badge">LLM Wiki 教學簡報</span>
+            <h1>台灣高鐵購票與省錢攻略新手指南</h1>
+            <p>第一次搭高鐵不知道怎麼買最划算？這份簡報帶你掌握預售搶票時間、早鳥與大學生優惠規定，以及不同族群的最佳買法。</p>
+            <ul>
+                <li><strong>黃金預售時間：</strong> 乘車日前 29 天（含當日）凌晨 00:00 準時開賣。</li>
+                <li><strong>多元購票管道：</strong> 官網、T-EX 行動購票 App、四大超商與車站窗口皆可訂票。</li>
+            </ul>
+            <div class="source">知識庫來源：wiki/index.md、wiki/01_booking_timeline.md</div>
+        </div>
+
+        <!-- 第 2 頁 -->
+        <div class="card">
+            <span class="badge">攻略一：早鳥優惠</span>
+            <h2>早鳥 65 折、8 折、9 折怎麼搶？</h2>
+            <ul>
+                <li><strong>階梯式限量發售：</strong> 65 折售完改賣 8 折，再售完改賣 9 折，最晚賣到乘車日前 5 天截止。</li>
+                <li><strong>實名制限本人搭乘：</strong> 僅限標準車廂對號座全票，購票需填身分證字號，票面會印出末 5 碼。</li>
+                <li><strong>離峰班次配額多：</strong> 避開週五晚上與週日下午尖峰，更容易搶到 65 折優惠。</li>
+            </ul>
+            <div class="source">知識庫來源：wiki/02_early_bird.md</div>
+        </div>
+
+        <!-- 第 3 頁 -->
+        <div class="card">
+            <span class="badge">攻略二：大學生優惠</span>
+            <h2>大學生 5 折起與乘車驗票規定</h2>
+            <ul>
+                <li><strong>適用對象與折扣：</strong> 大專院校在學學生（含碩博與進修部），指定車次享 5 折、75 折或 88 折。</li>
+                <li><strong>必備查驗證件：</strong> 需攜帶「蓋有當學期註冊章的實體學生證」；免蓋章學校需另備紙本或事先下載的電子版「在學證明」。</li>
+                <li><strong>重要提醒：</strong> 列車上查票不接受現場連網登入系統查詢，未帶證件需補差額並加收 50% 違約金。</li>
+            </ul>
+            <div class="source">知識庫來源：wiki/03_student_discount.md</div>
+        </div>
+
+        <!-- 第 4 頁 -->
+        <div class="card">
+            <span class="badge">攻略三：自由座與通勤票</span>
+            <h2>臨時出發與高頻通勤族怎麼省？</h2>
+            <ul>
+                <li><strong>標準車廂自由座：</strong> 比對號座全票便宜約 5～50 元，不指定車次與座位。</li>
+                <li><strong>悠遊／一卡通聯名卡感應：</strong> 已開啟自動加值功能者，可直接刷卡進站搭自由座免排隊。</li>
+                <li><strong>定期票與回數票：</strong> 30 天無限次搭乘自由座定期票約 49 折；30 天搭 10 次回數票享 82 折。</li>
+            </ul>
+            <div class="source">知識庫來源：wiki/04_non_reserved_and_passes.md</div>
+        </div>
+
+        <!-- 第 5 頁 -->
+        <div class="card">
+            <span class="badge">總整理：對號入座</span>
+            <h2>四大族群最佳省錢購票策略對照</h2>
+            <table>
+                <tr>
+                    <th>乘車族群</th>
+                    <th>推薦優惠方案</th>
+                    <th>最高折扣與關鍵條件</th>
+                </tr>
+                <tr>
+                    <td><strong>大專院校學生</strong></td>
+                    <td>大學生優惠指定車次</td>
+                    <td>5 折起（務必攜帶有效學生證或在學證明）</td>
+                </tr>
+                <tr>
+                    <td><strong>提早規劃旅遊族</strong></td>
+                    <td>早鳥優惠離峰車次</td>
+                    <td>65 折起（乘車日前 29 天凌晨 00:00 開搶）</td>
+                </tr>
+                <tr>
+                    <td><strong>臨時出發短程族</strong></td>
+                    <td>標準車廂自由座</td>
+                    <td>比全票省 5～50 元（可刷聯名卡直接進站）</td>
+                </tr>
+                <tr>
+                    <td><strong>跨縣市通勤族</strong></td>
+                    <td>定期票／回數票</td>
+                    <td>定期票 49 折、回數票 82 折起（車站窗口購買）</td>
+                </tr>
+            </table>
+            <div class="source">知識庫來源：wiki/05_strategy_comparison.md</div>
+        </div>
+    </div>
+
+    <div class="nav">
+        <button id="prev" onclick="move(-1)" disabled>← 上一頁</button>
+        <span id="num">1 / 5</span>
+        <button id="next" onclick="move(1)">下一頁 →</button>
+    </div>
+
+    <script>
+        let idx = 0;
+        const cards = document.querySelectorAll('.card');
+        const bar = document.getElementById('bar');
+        const num = document.getElementById('num');
+        const prev = document.getElementById('prev');
+        const next = document.getElementById('next');
+
+        function render() {
+            cards.forEach((c, i) => c.classList.toggle('active', i === idx));
+            bar.style.width = ((idx + 1) / cards.length) * 100 + '%';
+            num.textContent = `${idx + 1} / ${cards.length}`;
+            prev.disabled = idx === 0;
+            next.disabled = idx === cards.length - 1;
+        }
+        function move(step) {
+            idx = Math.max(0, Math.min(cards.length - 1, idx + step));
+            render();
+        }
+        document.addEventListener('keydown', e => {
+            if (e.key === 'ArrowRight') move(1);
+            if (e.key === 'ArrowLeft') move(-1);
+        });
+        render();
+    </script>
+</body>
+</html>
